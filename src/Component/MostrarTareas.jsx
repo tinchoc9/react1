@@ -14,7 +14,7 @@ export function MostrarTareas() {
     const response = await axios.get(`${endpoint}/api/tareas`);
     setTareas(response.data);
   };
-  console.log(tareas)
+  console.log(tareas);
   const eliminarTareas = async (id) => {
     const response = await axios.delete(`${endpoint}/api/tarea/${id}`);
     traerTareas();

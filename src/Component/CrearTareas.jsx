@@ -13,7 +13,7 @@ export function CrearTareas() {
     await axios.post(endpoint, { nombre: nombre });
     navigate('');
   };
-
+ 
   return (
     <>
       <h1>Creacion de nueva tarea</h1>

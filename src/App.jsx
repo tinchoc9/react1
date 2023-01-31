@@ -8,8 +8,7 @@ export function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="creartarea" element={<CrearTareas />} />
-          <Route path="editar/:id" element={<EditarTareas />} />
+       
           <Route path="/" element={<MostrarTareas />} />
         </Routes>
       </BrowserRouter>

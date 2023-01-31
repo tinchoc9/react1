@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { axios } from "axios";
+import  axios  from "axios";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 export function EditarTareas() {
-  const endpoint = "";
+  const endpoint = "http://127.0.0.1:8000/api";
   const [nombre, setNombre] = useState("");
   const [estado, setEstado] = useState(false);
-  const navigate = useNavigate("");
+  const navigate = useNavigate('/');
 
   const update = async (e) => {
     e.preventDefault();
     await axios.put(`${endpoint}/${id}`, { nombre: nombre, estado: estado });
-    useNavigate("/");
+    navigate("/");
   };
 
   const show = async () => {

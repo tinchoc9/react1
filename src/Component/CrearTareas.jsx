@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
-import {axios} from "axios";
+import { axios } from "axios";
 import { useNavigate } from "react-router-dom";
 
 export function CrearTareas() {
-  const endpoint = "";
+  const endpoint = "http://127.0.0.1:8000/api";
   const [nombre, setNombre] = useState("");
   const [estado, setEstado] = useState(false);
   const navigate = useNavigate();
 
+  navigate(`/crear`);
+  
   const store = async (e) => {
     e.preventDefault();
     await axios.post(endpoint, { nombre: nombre });
-    navigate('');
+    navigate("");
   };
- 
+
   return (
     <>
       <h1>Creacion de nueva tarea</h1>

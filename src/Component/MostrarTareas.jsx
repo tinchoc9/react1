@@ -1,5 +1,6 @@
-import axios from "axios";
+import axios from 'axios';
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export function MostrarTareas() {
   const endpoint = "http://127.0.0.1:8000";
@@ -16,29 +17,33 @@ export function MostrarTareas() {
   };
   console.log(tareas);
   const eliminarTareas = async (id) => {
-    const response = await axios.delete(`${endpoint}/api/tarea/${id}`);
+    const response = await axios.delete(`${endpoint}/api/dtarea/${id}`);
     traerTareas();
   };
 
   return (
     <div>
-      <table>
+      <table className="table table-striped">
         <thead>
           <tr>
-            <th>Estado</th>
             <th>Nombre Tarea</th>
           </tr>
         </thead>
         <tbody>
-          {console.log(tareas)}
           {tareas.map((tarea) => (
             <tr key={tarea.id}>
-              <th></th>
               <th>{tarea.nombre}</th>
               <th>
-                <button onClick={() => eliminarTareas(tarea.id)}>
+                <button
+                  className="btn btn-warning"
+                  type="button"
+                  onClick={() => eliminarTareas(tarea.id)}
+                >
                   Eliminar Tarea
                 </button>
+                {
+                  //<Link to={`/editar/${tarea.id}` }>Editar</Link>
+                }
               </th>
             </tr>
           ))}

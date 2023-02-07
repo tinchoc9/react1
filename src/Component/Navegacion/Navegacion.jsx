@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import { BusquedaNav } from "../Navegacion/BusquedaNav";
 
 export function Navegacion() {
@@ -6,9 +6,7 @@ export function Navegacion() {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Gestor de Tareas
-          </a>
+        <NavLink to='/'>Gestor de Tareas</NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -22,15 +20,9 @@ export function Navegacion() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to={`/crear`}>
-                  Inicio
-                </Link>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" >
-                  Crear Tareas
-                </a>
+              <NavLink to='crear'>Crear Tarea</NavLink> 
               </li>
             </ul>
             <BusquedaNav />
